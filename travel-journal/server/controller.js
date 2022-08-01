@@ -20,7 +20,7 @@ module.exports = {
             drop table if exists countries;
 
             create table countries (
-                country_id integer serial primary key, 
+                country_id serial primary key, 
                 name varchar
             );
             CREATE TABLE cities (
@@ -237,7 +237,7 @@ module.exports = {
     },
     getCountries: (req, res) => {
         let{name} = req.body
-        sequelize.query(`SELECT * FROM countries at name`)
+        sequelize.query(`SELECT * FROM countries(name)`)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log(err))
         
