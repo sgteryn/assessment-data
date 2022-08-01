@@ -2,7 +2,6 @@ require('dotenv').config()
 const {CONNECTION_STRING} = process.env
 
 const Sequelize = require('sequelize')
-// CONNECTION_STRING = "postgres://tukloyqpmntiqo:b002152d1f61f83ff35c79ea372eefbe244aebaf2f24aa754df0737a26a621b3@ec2-44-195-100-240.compute-1.amazonaws.com:5432/da3fa9stcaprlm"
 const sequelize = new Sequelize(CONNECTION_STRING, {
     dialect: 'postgres',
     dialectOptions: {
