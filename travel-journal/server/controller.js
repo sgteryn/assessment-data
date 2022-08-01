@@ -254,7 +254,7 @@ module.exports = {
     },
     getCities: (req, res) => {
         sequelize.query(`
-        SELECT * from countries co 
+        SELECT ci.city_id, ci.name, ci.rating, co.country_id, co.name * from countries co 
         JOIN cities ci 
         on co.country_id = ci.country_id
         order by rating desc`)
